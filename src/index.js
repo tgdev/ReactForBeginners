@@ -6,7 +6,8 @@ import { render } from 'react-dom';
 import './css/style.css';
 
 // App Components
+import App from './components/App';
 import StorePicker from './components/StorePicker';
 
 // Hook it up to index.html
-render(<StorePicker />, document.querySelector('#main'));
+render(<App />, document.querySelector('#main'));
