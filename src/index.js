@@ -1,8 +1,11 @@
-// Libs
+// App Libs
 import React from 'react';
 import { render } from 'react-dom';
 
-// Components
+// App Styles
+import './css/style.css';
+
+// App Components
 import StorePicker from './components/StorePicker';
 
 // Hook it up to index.html
