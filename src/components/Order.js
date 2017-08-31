@@ -3,7 +3,9 @@ import React from 'react';
 class Order extends React.Component {
   render() {
     return (
-      <div>App Order</div>
+      <div>
+        <h2>Your Order</h2>
+      </div>
     );
   }
 };
