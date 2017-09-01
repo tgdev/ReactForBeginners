@@ -51,7 +51,9 @@ class App extends React.Component {
     return (
       <div className="catch-of-the-day">
         <div className="menu">
+
           <Header tagline="Fresh Seafood Market" />
+
           <ul className="list-of-fishes">
             {Object.keys(this.state.fishes)
               .map(fishKey => <Fish key={fishKey} index={fishKey} details={this.state.fishes[fishKey]} addToOrder={this.addToOrder} />)
@@ -59,7 +61,11 @@ class App extends React.Component {
             <Fish />
           </ul>
         </div>
-        <Order />
+
+        <Order
+          fishes={this.state.fishes}
+          order={this.state.order} />
+
         <Inventory
           addFish={this.addFish}
           loadSamples={this.loadSamples} />
