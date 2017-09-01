@@ -8,6 +8,9 @@ class Fish extends React.Component {
 
     if (!details) return null;
 
+    const isAvailable = details.status === 'available';
+    const buttonText = isAvailable ? 'Add To Order' : 'Sold Out';
+
     return (
       <li className="menu-fish">
         <img src={details.image} alt="" />
@@ -16,7 +19,7 @@ class Fish extends React.Component {
           <span>{formatPrice(details.price)}</span>
         </h3>
         <p>{details.desc}</p>
-        <button>Add To Order</button>
+        <button disabled={!isAvailable}>{buttonText}</button>
       </li>
     );
 
