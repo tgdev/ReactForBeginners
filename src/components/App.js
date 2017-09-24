@@ -32,6 +32,19 @@ class App extends React.Component {
         state: 'fishes'
       }
     );
+
+    // check for order data in localStorage
+    const localStorageRef = localStorage.getItem(`order-${this.props.params.storeId}`);
+
+    if (localStorageRef) {
+      this.setState({
+        order: JSON.parse(localStorageRef)
+      });
+    }
+  }
+
+  componentWillUpdate(nextProps, nextState) {
+    localStorage.setItem(`order-${this.props.params.storeId}`, JSON.stringify(nextState.order));
   }
 
   componentWillUnmount() {
