@@ -110,7 +110,6 @@ class App extends React.Component {
             {Object.keys(this.state.fishes)
               .map(fishKey => <Fish key={fishKey} index={fishKey} details={this.state.fishes[fishKey]} addToOrder={this.addToOrder} />)
             }
-            <Fish />
           </ul>
         </div>
 
@@ -128,6 +127,10 @@ class App extends React.Component {
       </div>
     );
   }
+};
+
+App.propTypes = {
+  params: React.PropTypes.object.isRequired
 };
 
 export default App;
