@@ -1,4 +1,5 @@
 import React from 'react';
+import base from '../base';
 
 // Components
 import Header from './Header';
@@ -20,6 +21,21 @@ class App extends React.Component {
     this.addFish = this.addFish.bind(this);
     this.loadSamples = this.loadSamples.bind(this);
     this.addToOrder = this.addToOrder.bind(this);
+  }
+
+  componentWillMount() {
+    // update state with firebase db
+    this.ref = base.syncState(
+      `${this.props.params.storeId}/fishes`,
+      {
+        context: this,
+        state: 'fishes'
+      }
+    );
+  }
+
+  componentWillUnmount() {
+    base.removeBinding(this.ref);
   }
 
   addFish(fish) {
