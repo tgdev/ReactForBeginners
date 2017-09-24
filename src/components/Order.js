@@ -1,4 +1,5 @@
 import React from 'react';
+import CSSTransitionGroup from 'react-addons-css-transition-group';
 
 import { formatPrice } from '../helpers';
 
@@ -46,13 +47,19 @@ class Order extends React.Component {
     return (
       <div className="order-wrap">
         <h2>Your order</h2>
-        <ul className="order">
+        <CSSTransitionGroup
+          component="ul"
+          className="order"
+          transitionName='order'
+          transitionEnterTimeout={500}
+          transitionLeaveTimeout={500}
+        >
           {orderIds.map(this.renderOrderItem)}
           <li className="total">
             <strong>Total:</strong>
             {formatPrice(total)}
           </li>
-        </ul>
+        </CSSTransitionGroup>
       </div>
     );
   }
