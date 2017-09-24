@@ -24,3 +24,20 @@
     max-height 0
     padding 0 !important
     transform translateX(-120%)
+
+.count-enter
+  transform translateY(100%)
+  transition all 0.25s
+
+  &.count-enter-active
+    transform translateY(0)
+
+.count-leave
+  position absolute
+  left 0
+  bottom 0
+  transform translateY(0)
+  transition all 0.25s
+
+  &.count-leave-active
+    transform translateY(-100%)
