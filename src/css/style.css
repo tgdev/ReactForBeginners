@@ -586,6 +586,8 @@ input[type=submit].success:after {
 }
 button.github,
 input[type=submit].github,
+button.google,
+input[type=submit].google,
 button.facebook,
 input[type=submit].facebook,
 button.twitter,
@@ -604,6 +606,14 @@ input[type=submit].github {
 button.github:after,
 input[type=submit].github:after {
   background: #5cc437;
+}
+button.google,
+input[type=submit].google {
+  background: #4285f4;
+}
+button.google:after,
+input[type=submit].google:after {
+  background: #0e61ea;
 }
 button.facebook,
 input[type=submit].facebook {
